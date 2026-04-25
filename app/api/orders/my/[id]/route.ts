@@ -9,6 +9,8 @@ import {
   type LeanOrderForDetail,
 } from "@/lib/order-detail-public";
 
+export const dynamic = "force-dynamic";
+
 type Ctx = { params: Promise<{ id: string }> };
 
 export async function GET(_req: Request, { params }: Ctx) {

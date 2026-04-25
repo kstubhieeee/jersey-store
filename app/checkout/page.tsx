@@ -107,7 +107,7 @@ export default function CheckoutPage() {
               email: user?.primaryEmailAddress?.emailAddress ?? "",
               name: user?.fullName ?? "",
             },
-            theme: { color: "#D4AF37" },
+            theme: { color: "#15803d" },
             modal: { ondismiss: () => setPaying(false) },
           };
           const rz = new R(options);

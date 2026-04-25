@@ -7,6 +7,7 @@ import { TShirt } from "@phosphor-icons/react";
 import { useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { orderJerseySizes } from "@/config/jersey-sizes";
+import { productCta } from "@/config/product-cta";
 
 type Props = {
   jerseyId: string;
@@ -83,17 +84,21 @@ export function ProductActions({ jerseyId, sizes, piecesInStock }: Props) {
       <div className="mt-auto flex flex-col sm:flex-row gap-4">
         {isSignedIn ? (
           <Button
-            className="flex-1"
+            className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90"
             size="lg"
             disabled={busy || !size || out}
             onClick={addToCart}
           >
-            {busy ? "Adding…" : out ? "Sold out" : "Add to Cart"}
+            {busy ? productCta.buyNowBusy : out ? productCta.soldOut : productCta.buyNow}
           </Button>
         ) : (
           <SignInButton mode="modal">
-            <Button className="flex-1" size="lg" disabled={!size || out}>
-              Sign in to add to cart
+            <Button
+              className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90"
+              size="lg"
+              disabled={!size || out}
+            >
+              {productCta.signInToBuy}
             </Button>
           </SignInButton>
         )}

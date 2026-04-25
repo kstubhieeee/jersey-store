@@ -1,8 +1,12 @@
 export const theme = {
-  background: "#000000",
-  foreground: "#D4AF37",
-  foregroundMuted: "#B8860B",
-  text: "#FFFFFF",
-  textMuted: "rgba(255,255,255,0.7)",
-  border: "rgba(212,175,55,0.3)",
+  background: "#ffffff",
+  foreground: "#171717",
+  foregroundMuted: "#15803d",
+  text: "#171717",
+  textMuted: "rgba(23,23,23,0.6)",
+  border: "rgba(22,101,52,0.18)",
+  primary: "#15803d",
+  primaryOn: "#ffffff",
+  secondarySurface: "#dcfce7",
+  secondaryOn: "#14532d",
 } as const;

@@ -13,7 +13,11 @@ export function SectionShopBy({
   return (
     <section className="w-full border-b border-border bg-background px-6 py-12">
       <div className="mx-auto max-w-7xl">
-        <h2 className="mb-8 text-xl font-bold text-foreground">Shop By</h2>
+        <div className="mb-8 flex items-center justify-center gap-3">
+          <div className="h-px w-12 bg-[#232323]" />
+          <h2 className="text-xl font-bold text-foreground">Shop By</h2>
+          <div className="h-px w-12 bg-[#232323]" />
+        </div>
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
           {sections.map((cat) => (
             <Link

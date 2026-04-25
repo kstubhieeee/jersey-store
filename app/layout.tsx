@@ -1,12 +1,20 @@
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
-import { Work_Sans } from "next/font/google";
+import { Playfair_Display, Quicksand } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { SiteFooter } from "@/components/site-footer";
 
-const workSans = Work_Sans({
+export const dynamic = "force-dynamic";
+
+const quicksand = Quicksand({
   subsets: ["latin"],
-  variable: "--font-work-sans",
+  variable: "--font-quicksand",
+});
+
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair-display",
 });
 
 export const metadata: Metadata = {
@@ -21,9 +29,18 @@ export default function RootLayout({
     <ClerkProvider>
       <html
         lang="en"
-        className={cn("h-full", "antialiased", "dark", workSans.variable, "font-sans")}
+        className={cn(
+          "h-full",
+          "antialiased",
+          quicksand.variable,
+          playfairDisplay.variable,
+          "font-sans"
+        )}
       >
-        <body className="min-h-full flex flex-col">{children}</body>
+        <body className="min-h-full flex flex-col">
+          <div className="flex min-h-full flex-1 flex-col">{children}</div>
+          <SiteFooter />
+        </body>
       </html>
     </ClerkProvider>
   );

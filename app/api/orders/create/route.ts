@@ -9,6 +9,8 @@ import { clerkOrderProfile } from "@/lib/clerk-order-profile";
 import { buildOrderFromCartLines } from "@/lib/build-order-from-cart";
 import { orderItemsMatch } from "@/lib/order-items-compare";
 
+export const dynamic = "force-dynamic";
+
 export async function POST(req: Request) {
   const { userId } = await auth();
   if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });

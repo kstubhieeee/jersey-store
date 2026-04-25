@@ -8,6 +8,8 @@ import { stockCap } from "@/lib/stock";
 import { ensureShiprocketForPaidOrder } from "@/lib/shiprocket-sync";
 import { clerkOrderProfile } from "@/lib/clerk-order-profile";
 
+export const dynamic = "force-dynamic";
+
 const E = {
   NOFIND: "VERIFY_NOFIND",
   STOCK: "VERIFY_STOCK",

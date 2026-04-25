@@ -7,6 +7,13 @@ export default function SignInPage() {
         routing="path"
         path="/sign-in"
         appearance={{
+          variables: {
+            colorPrimary: "#15803d",
+            colorText: "#171717",
+            colorBackground: "#ffffff",
+            colorInputBackground: "#ffffff",
+            colorNeutral: "#f4f4f5",
+          },
           elements: {
             rootBox: "mx-auto",
             card: "bg-card border border-border",
