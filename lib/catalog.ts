@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import { connectDB } from "@/lib/mongodb";
-import { Section, Jersey } from "@/lib/models";
+import { Section, Jersey, Banner } from "@/lib/models";
 import {
   toJerseyPublic,
   toSectionWithJerseysPublic,
@@ -49,4 +49,30 @@ export async function getTrendingJerseys(): Promise<JerseyPublic[]> {
   await connectDB();
   const list = await Jersey.find().sort({ updatedAt: -1 }).limit(12).lean();
   return list.map((j) => toJerseyPublic(j as unknown as LeanJersey));
+}
+
+export type HomeBannerPublic = {
+  id: string;
+  src: string;
+  alt: string;
+  headline: string;
+  subline: string;
+  href?: string;
+};
+
+export async function getHomeBanners(): Promise<HomeBannerPublic[]> {
+  await connectDB();
+  const rows = await Banner.find({ isActive: true })
+    .sort({ sortOrder: 1, createdAt: -1 })
+    .lean();
+  return rows
+    .map((x) => ({
+      id: String(x._id),
+      src: String(x.imageUrl ?? "").trim(),
+      alt: String(x.alt ?? "").trim(),
+      headline: String(x.headline ?? "").trim(),
+      subline: String(x.subline ?? "").trim(),
+      href: String(x.href ?? "").trim() || undefined,
+    }))
+    .filter((x) => x.src);
 }

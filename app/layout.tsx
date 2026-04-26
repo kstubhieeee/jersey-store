@@ -18,7 +18,7 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "ClassicKit",
+  title: "Demonoid",
   description: "Vintage football jerseys",
 };
 

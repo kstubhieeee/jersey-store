@@ -123,6 +123,19 @@ const orderSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+const bannerSchema = new mongoose.Schema(
+  {
+    imageUrl: { type: String, required: true },
+    alt: { type: String, default: "" },
+    headline: { type: String, default: "" },
+    subline: { type: String, default: "" },
+    href: { type: String, default: "" },
+    sortOrder: { type: Number, default: 0 },
+    isActive: { type: Boolean, default: true },
+  },
+  { timestamps: true }
+);
+
 export const Section =
   mongoose.models.Section || mongoose.model("Section", sectionSchema);
 export const Jersey =
@@ -130,3 +143,5 @@ export const Jersey =
 export const Cart = mongoose.models.Cart || mongoose.model("Cart", cartSchema);
 export const Order =
   mongoose.models.Order || mongoose.model("Order", orderSchema);
+export const Banner =
+  mongoose.models.Banner || mongoose.model("Banner", bannerSchema);

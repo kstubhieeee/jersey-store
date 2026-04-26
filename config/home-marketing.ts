@@ -65,7 +65,7 @@ export const homeTestimonials: readonly HomeTestimonial[] = [
 ];
 
 export const siteFooter = {
-  brandName: "ClassicKit",
+  brandName: "Demonoid",
   blurb: "Vintage football jerseys, curated for collectors and everyday fans.",
   columns: [
     {
@@ -87,7 +87,7 @@ export const siteFooter = {
   bottomLinks: [
     { label: "Privacy", href: "#" },
     { label: "Terms", href: "#" },
-    { label: "Contact", href: "mailto:hello@classickit.example" },
+    { label: "Contact", href: "mailto:hello@demonoid.example" },
   ],
   copyrightYear: 2026,
 } as const;

@@ -13,8 +13,8 @@ export async function generateMetadata({ params }: Props) {
   const { category } = await params;
   await connectDB();
   const section = await Section.findOne({ slug: category }).lean();
-  if (!section) return { title: "Shop | ClassicKit" };
-  return { title: `${(section as { name: string }).name} | ClassicKit` };
+  if (!section) return { title: "Shop | Demonoid" };
+  return { title: `${(section as { name: string }).name} | Demonoid` };
 }
 
 export default async function ShopCategoryPage({ params }: Props) {

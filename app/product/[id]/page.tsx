@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: Props) {
   const { id } = await params;
   const jersey = await getJerseyById(id);
   if (!jersey) return { title: "Product Not Found" };
-  return { title: `${jersey.name} | ClassicKit` };
+  return { title: `${jersey.name} | Demonoid` };
 }
 
 export default async function ProductPage({ params }: Props) {

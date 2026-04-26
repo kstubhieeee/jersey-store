@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useAuth, SignInButton, UserButton } from "@clerk/nextjs";
-import { TShirt, ShoppingBag } from "@phosphor-icons/react";
+import { ShoppingBag } from "@phosphor-icons/react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
@@ -39,8 +40,8 @@ export function SectionHeader() {
           href="/"
           className="flex shrink-0 items-center gap-2 text-foreground hover:text-primary transition-colors"
         >
-          <TShirt className="size-6" weight="fill" />
-          <span className="font-bold text-lg">ClassicKit.</span>
+          <Image src="/logo.png" alt="Demonoid" width={32} height={32} className="size-8 object-contain" />
+          <span className="font-bold text-lg">Demonoid</span>
         </Link>
         <div className="flex shrink-0 items-center gap-3">
           {isSignedIn ? (

@@ -11,9 +11,9 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import type { HomeBanner } from "@/config/home-marketing";
+import type { HomeBannerPublic } from "@/lib/catalog";
 
-export function HeroBannerCarousel({ banners }: { banners: readonly HomeBanner[] }) {
+export function HeroBannerCarousel({ banners }: { banners: readonly HomeBannerPublic[] }) {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
@@ -66,7 +66,7 @@ export function HeroBannerCarousel({ banners }: { banners: readonly HomeBanner[]
   );
 }
 
-function BannerSlide({ banner }: { banner: HomeBanner }) {
+function BannerSlide({ banner }: { banner: HomeBannerPublic }) {
   const inner = (
     <div className="relative aspect-[21/9] min-h-[200px] w-full max-h-[420px] sm:min-h-[240px]">
       <Image

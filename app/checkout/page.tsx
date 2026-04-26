@@ -82,7 +82,7 @@ export default function CheckoutPage() {
             amount: createData.amount,
             currency: createData.currency,
             order_id: createData.razorpayOrderId,
-            name: "ClassicKit",
+            name: "Demonoid",
             description: "Jersey order",
             handler: async (response: RazorpaySuccess) => {
               const v = await fetch("/api/orders/verify", {

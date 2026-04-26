@@ -14,11 +14,11 @@ import {
 import { orderJerseySizes } from "@/config/jersey-sizes";
 import type { JerseyPublic } from "@/lib/catalog-shared";
 import { formatInrFromPaise, primaryJerseyImage } from "@/lib/catalog-shared";
-import { homeBanners } from "@/config/home-marketing";
 import { HeroBannerCarousel } from "@/components/hero-banner-carousel";
 import { Button } from "@/components/ui/button";
 import { productCta } from "@/config/product-cta";
 import { landingStyle } from "@/config/landing-style";
+import type { HomeBannerPublic } from "@/lib/catalog";
 
 function TrendingJerseyCard({ jersey }: { jersey: JerseyPublic }) {
   const id = String(jersey._id);
@@ -78,7 +78,13 @@ function TrendingJerseyCard({ jersey }: { jersey: JerseyPublic }) {
   );
 }
 
-export function SectionHero({ jerseys }: { jerseys: JerseyPublic[] }) {
+export function SectionHero({
+  jerseys,
+  banners,
+}: {
+  jerseys: JerseyPublic[];
+  banners: HomeBannerPublic[];
+}) {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
@@ -95,7 +101,7 @@ export function SectionHero({ jerseys }: { jerseys: JerseyPublic[] }) {
 
   return (
     <section className="w-full border-b border-border bg-background">
-      <HeroBannerCarousel banners={homeBanners} />
+      <HeroBannerCarousel banners={banners} />
       {jerseys.length > 0 ? (
         <div className="px-6 py-8">
           <div className="mb-6 flex items-center justify-center gap-3">
